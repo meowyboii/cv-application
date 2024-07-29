@@ -19,6 +19,9 @@
     background-color: #ffffff;
   }
 }
+button {
+  cursor: pointer;
+}
 h2,
 h3 {
   margin: 0;
@@ -31,6 +34,12 @@ form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+.form-button {
+  width: 200px;
+  padding: 10px;
+  border-radius: 30px;
+  margin: 10px;
 }
 .PhoneInputCountry {
   border: black 1px solid;

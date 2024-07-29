@@ -25,7 +25,7 @@ function App() {
       {activeIndex === 0 ? (
         <Profile setAllData={setAllData} />
       ) : activeIndex === 1 ? (
-        <Education setAllData={setAllData} />
+        <Education setAllData={setAllData} activeIndex={activeIndex} />
       ) : activeIndex === 2 ? (
         <Skills />
       ) : activeIndex === 3 ? (

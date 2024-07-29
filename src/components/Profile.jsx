@@ -65,7 +65,9 @@ export const Profile = ({ setAllData }) => {
           value={phoneNumber}
           onChange={handlePhoneChange}
         />
-        <button type="submit">Submit</button>
+        <button type="submit" className="form-button">
+          Save Changes
+        </button>
       </form>
     </div>
   );
