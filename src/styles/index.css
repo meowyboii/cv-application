@@ -19,3 +19,20 @@
     background-color: #ffffff;
   }
 }
+h2,
+h3 {
+  margin: 0;
+}
+input {
+  height: 35px;
+}
+form {
+  padding: 20px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.PhoneInputCountry {
+  border: black 1px solid;
+  padding: 5px;
+}
