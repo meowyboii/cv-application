@@ -1,0 +1,24 @@
+.section {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: aliceblue;
+  padding: 15px 5px;
+  transition: background-color 0.4s ease-in-out;
+  cursor: pointer;
+  border: 0;
+}
+.section:hover {
+  background-color: rgb(207, 207, 207);
+}
+.step {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
