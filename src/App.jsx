@@ -11,9 +11,9 @@ function App() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [allData, setAllData] = useState({
     profile: "",
-    education: "",
+    education: [{ id: 0, data: {} }],
     skills: "",
-    experience: "",
+    experience: [{ id: 0, data: {} }],
     social: "",
   });
   useEffect(() => {
@@ -23,13 +23,21 @@ function App() {
     <>
       <Navbar activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
       {activeIndex === 0 ? (
-        <Profile setAllData={setAllData} />
+        <Profile setAllData={setAllData} allData={allData} />
       ) : activeIndex === 1 ? (
-        <Education setAllData={setAllData} activeIndex={activeIndex} />
+        <Education
+          setAllData={setAllData}
+          allData={allData}
+          activeIndex={activeIndex}
+        />
       ) : activeIndex === 2 ? (
         <Skills />
       ) : activeIndex === 3 ? (
-        <Experience />
+        <Experience
+          setAllData={setAllData}
+          allData={allData}
+          activeIndex={activeIndex}
+        />
       ) : (
         <Social />
       )}

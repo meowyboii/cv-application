@@ -1,13 +1,15 @@
 import { useState } from "react";
 
-export const ExperienceForm = ({ id, onChange }) => {
-  const [formData, setFormData] = useState({
-    company: "",
-    position: "",
-    responsibility: "",
-    yearStarted: "",
-    yearEnded: "",
-  });
+export const ExperienceForm = ({ id, onChange, form }) => {
+  const [formData, setFormData] = useState(
+    form || {
+      company: "",
+      position: "",
+      responsibility: "",
+      yearStarted: "",
+      yearEnded: "",
+    }
+  );
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,7 +30,7 @@ export const ExperienceForm = ({ id, onChange }) => {
         required
       />
       <input
-        type="number"
+        type="text"
         id="position"
         name="position"
         placeholder="Position Title *"
@@ -49,17 +51,19 @@ export const ExperienceForm = ({ id, onChange }) => {
         type="number"
         id="yearStarted"
         name="yearStarted"
-        placeholder="Year Started"
+        placeholder="Year Started *"
         value={formData.yearStarted}
         onChange={handleChange}
+        required
       />
       <input
         type="number"
         id="yearEnded"
         name="yearEnded"
-        placeholder="Year Ended"
+        placeholder="Year Ended *"
         value={formData.yearEnded}
         onChange={handleChange}
+        required
       />
     </>
   );

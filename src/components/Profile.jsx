@@ -3,14 +3,14 @@ import "../styles/index.css";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
-export const Profile = ({ setAllData }) => {
+export const Profile = ({ setAllData, allData }) => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    phone: "",
-    address: "",
+    firstName: allData.profile.firstName,
+    lastName: allData.profile.lastName,
+    phone: allData.profile.phone,
+    address: allData.profile.address,
   });
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState(allData.profile.phone);
   const handlePhoneChange = (phone) => {
     setPhoneNumber(phone);
     handleChange({ target: { name: "phone", value: phone } });

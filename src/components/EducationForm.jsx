@@ -1,11 +1,13 @@
 import { useState } from "react";
 
-export const EducationForm = ({ id, onChange }) => {
-  const [formData, setFormData] = useState({
-    course: "",
-    completionYear: "",
-    school: "",
-  });
+export const EducationForm = ({ id, onChange, form }) => {
+  const [formData, setFormData] = useState(
+    form || {
+      course: "",
+      completionYear: "",
+      school: "",
+    }
+  );
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -13,6 +15,7 @@ export const EducationForm = ({ id, onChange }) => {
     setFormData(newData);
     onChange(id, newData);
   };
+
   return (
     <>
       <h3>Education {id + 1}</h3>

@@ -2,8 +2,13 @@ import { useState, useEffect } from "react";
 import { ExperienceForm } from "./ExperienceForm";
 import { EducationForm } from "./EducationForm";
 
-export const FormRenderer = ({ setAllData, activeIndex, title }) => {
-  const [forms, setForms] = useState([]);
+export const FormRenderer = ({
+  setAllData,
+  activeIndex,
+  formsArray,
+  title,
+}) => {
+  const [forms, setForms] = useState(formsArray);
 
   const addForm = () => {
     setForms([...forms, { id: forms.length, data: {} }]);
@@ -26,10 +31,16 @@ export const FormRenderer = ({ setAllData, activeIndex, title }) => {
       ...prevData,
       [title]: forms,
     }));
+    console.log(forms);
   };
+
   useEffect(() => {
-    addForm();
-  }, []);
+    console.log("FORMS:", forms);
+  }, [forms]);
+
+  useEffect(() => {
+    setForms(formsArray);
+  }, [formsArray]);
 
   return (
     <div>
@@ -41,12 +52,14 @@ export const FormRenderer = ({ setAllData, activeIndex, title }) => {
               key={form.id}
               id={form.id}
               onChange={handleFormChange}
+              form={form.data}
             />
           ) : (
             <ExperienceForm
               key={form.id}
               id={form.id}
               onChange={handleFormChange}
+              form={form.data}
             />
           )
         )}
