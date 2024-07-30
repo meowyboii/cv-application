@@ -42,10 +42,9 @@ export const ExperienceForm = ({ id, onChange, form }) => {
         type="text"
         id="responsibility"
         name="responsibility"
-        placeholder="Main Responsibilities *"
+        placeholder="Main Responsibilities"
         value={formData.responsibility}
         onChange={handleChange}
-        required
       />
       <input
         type="number"

@@ -1,12 +1,12 @@
 import { FormRenderer } from "./FormRenderer";
 
-export const Skills = ({ setAllData, allData, activeIndex }) => {
+export const Socials = ({ setAllData, allData, activeIndex }) => {
   return (
     <FormRenderer
       setAllData={setAllData}
       activeIndex={activeIndex}
-      formsArray={allData.skill}
-      title="skill"
+      formsArray={allData.social}
+      title="social"
     />
   );
 };

@@ -1,6 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ExperienceForm } from "./ExperienceForm";
 import { EducationForm } from "./EducationForm";
+import { SkillsForm } from "./SkillsForm";
+import { SocialsForm } from "./SocialsForm";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const FormRenderer = ({
   setAllData,
@@ -31,16 +35,8 @@ export const FormRenderer = ({
       ...prevData,
       [title]: forms,
     }));
-    console.log(forms);
+    toast.success("Changes saved successfully!");
   };
-
-  useEffect(() => {
-    console.log("FORMS:", forms);
-  }, [forms]);
-
-  useEffect(() => {
-    setForms(formsArray);
-  }, [formsArray]);
 
   return (
     <div>
@@ -54,8 +50,22 @@ export const FormRenderer = ({
               onChange={handleFormChange}
               form={form.data}
             />
-          ) : (
+          ) : activeIndex === 2 ? (
+            <SkillsForm
+              key={form.id}
+              id={form.id}
+              onChange={handleFormChange}
+              form={form.data}
+            />
+          ) : activeIndex === 3 ? (
             <ExperienceForm
+              key={form.id}
+              id={form.id}
+              onChange={handleFormChange}
+              form={form.data}
+            />
+          ) : (
+            <SocialsForm
               key={form.id}
               id={form.id}
               onChange={handleFormChange}
@@ -80,6 +90,7 @@ export const FormRenderer = ({
           </button>
         </div>
       </form>
+      <ToastContainer autoClose={2000} />
     </div>
   );
 };

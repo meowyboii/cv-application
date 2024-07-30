@@ -2,6 +2,8 @@ import { useState } from "react";
 import "../styles/index.css";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Profile = ({ setAllData, allData }) => {
   const [formData, setFormData] = useState({
@@ -29,6 +31,7 @@ export const Profile = ({ setAllData, allData }) => {
       ...prevData,
       profile: formData,
     }));
+    toast.success("Changes saved successfully!");
   };
   return (
     <div className="section-container">
@@ -41,6 +44,7 @@ export const Profile = ({ setAllData, allData }) => {
           placeholder="First Name"
           value={formData.firstName}
           onChange={handleChange}
+          required
         />
         <input
           type="text"
@@ -49,6 +53,7 @@ export const Profile = ({ setAllData, allData }) => {
           placeholder="Last Name"
           value={formData.lastName}
           onChange={handleChange}
+          required
         />
         <input
           type="text"
@@ -57,6 +62,7 @@ export const Profile = ({ setAllData, allData }) => {
           placeholder="Address"
           value={formData.address}
           onChange={handleChange}
+          required
         />
         <PhoneInput
           id="phone"
@@ -64,11 +70,13 @@ export const Profile = ({ setAllData, allData }) => {
           placeholder="Enter phone number"
           value={phoneNumber}
           onChange={handlePhoneChange}
+          required
         />
         <button type="submit" className="form-button">
           Save Changes
         </button>
       </form>
+      <ToastContainer autoClose={2000} />
     </div>
   );
 };
