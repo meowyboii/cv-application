@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background-color: aliceblue;
+  background-color: rgb(250, 241, 230);
   padding: 15px 5px;
   transition: background-color 0.4s ease-in-out;
   cursor: pointer;

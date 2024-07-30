@@ -5,6 +5,7 @@ import { SkillsForm } from "./SkillsForm";
 import { SocialsForm } from "./SocialsForm";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useEffect } from "react";
 
 export const FormRenderer = ({
   setAllData,
@@ -37,6 +38,10 @@ export const FormRenderer = ({
     }));
     toast.success("Changes saved successfully!");
   };
+
+  useEffect(() => {
+    addForm();
+  }, []);
 
   return (
     <div>

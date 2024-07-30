@@ -9,35 +9,42 @@ export const Navbar = ({ activeIndex, setActiveIndex }) => {
         counter={1}
         onShow={() => setActiveIndex(0)}
       >
-        Profile Section
+        Profile
       </Section>
       <Section
         isActive={activeIndex === 1}
         counter={2}
         onShow={() => setActiveIndex(1)}
       >
-        Education Section
+        Education
       </Section>
       <Section
         isActive={activeIndex === 2}
         counter={3}
         onShow={() => setActiveIndex(2)}
       >
-        Skills Section
+        Skills
       </Section>
       <Section
         isActive={activeIndex === 3}
         counter={4}
         onShow={() => setActiveIndex(3)}
       >
-        Practical Experience
+        Experience
       </Section>
       <Section
         isActive={activeIndex === 4}
         counter={5}
         onShow={() => setActiveIndex(4)}
       >
-        Socials Section
+        Socials
+      </Section>
+      <Section
+        isActive={activeIndex === 5}
+        counter={6}
+        onShow={() => setActiveIndex(5)}
+      >
+        Result
       </Section>
     </div>
   );

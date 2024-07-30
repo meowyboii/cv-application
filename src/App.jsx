@@ -6,15 +6,16 @@ import { Education } from "./components/Education";
 import { Skills } from "./components/Skills";
 import { Experience } from "./components/Experience";
 import { Socials } from "./components/Socials";
+import { Resume } from "./components/Resume";
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [allData, setAllData] = useState({
     profile: "",
-    education: [{ id: 0, data: {} }],
-    skill: [{ id: 0, data: {} }],
-    experience: [{ id: 0, data: {} }],
-    social: [{ id: 0, data: {} }],
+    education: [],
+    skill: [],
+    experience: [],
+    social: [],
   });
   useEffect(() => {
     console.log(allData);
@@ -42,12 +43,14 @@ function App() {
           allData={allData}
           activeIndex={activeIndex}
         />
-      ) : (
+      ) : activeIndex === 4 ? (
         <Socials
           setAllData={setAllData}
           allData={allData}
           activeIndex={activeIndex}
         />
+      ) : (
+        <Resume allData={allData} />
       )}
     </>
   );
